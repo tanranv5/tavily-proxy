@@ -1,0 +1,13 @@
+services:
+  tavily-proxy:
+    build: .
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./:/data:ro
+    environment:
+      PORT: "8787"
+      KEYS_FILE: "/data/keys.json"
+      # TAVILY_MCP_BASE_URL: "https://mcp.tavily.com/mcp/"
+      # MAX_BODY_BYTES: "1048576"
+      # MAX_ERROR_BODY_BYTES: "262144"
